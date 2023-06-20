@@ -16,7 +16,14 @@ function Video({likes, messages, shares, name, description, music, url}) {
       setPlay(true);
     }
   }
-
+  window.onwheel = function () {
+    if (play) {
+      videoRef.current.pause();
+      setPlay(false);
+      console.log("ok 1");
+    }
+  };
+  
   return (
     <div className="video">
       <video
